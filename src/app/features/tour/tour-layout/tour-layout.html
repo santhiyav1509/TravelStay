@@ -1,0 +1,18 @@
+<div class="bg">
+  <header>
+    <div class="brand">
+      <span class="logo">✈</span>
+      <div>
+        <div class="name">Travel<span>World</span></div>
+        <small>Explore · Book · Enjoy</small>
+      </div>
+    </div>
+    <nav>
+      <a routerLink="/tour" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">🏠 Home</a>
+      <a routerLink="/tour/details" routerLinkActive="active">Bookings</a>
+      <a routerLink="/rooms">🛏 Rooms</a>
+      <a class="login">👤 Login</a>
+    </nav>
+  </header>
+  <main><router-outlet /></main>
+</div>

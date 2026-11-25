@@ -1,0 +1,32 @@
+<div class="card">
+  <h2>Tour Bookings</h2>
+  <div class="top"><button class="main" (click)="goNew()">+ New Booking</button></div>
+
+  <div class="wrap">
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Email</th><th>Phone</th><th>Visit Date</th>
+            <th>Group</th><th>Tour</th><th>Contact</th><th>Actions</th></tr>
+      </thead>
+      <tbody>
+        @for (i of items(); track i.id) {
+          <tr>
+            <td>{{ i.firstName }} {{ i.lastName }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.phone }}</td>
+            <td>{{ i.visitDate ? i.visitDate.slice(0, 10) : '' }}</td>
+            <td>{{ i.groupSize }}</td>
+            <td>{{ i.tourName }}</td>
+            <td><span class="tag">{{ i.contactMethod }}</span></td>
+            <td class="nw">
+              <button class="edit" (click)="onEdit(i.id)">Edit</button>
+              <button class="del" (click)="onDelete(i.id)">Delete</button>
+            </td>
+          </tr>
+        } @empty {
+          <tr><td colspan="8" class="empty">No bookings yet.</td></tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.bg { min-height: 100vh; display: flex; flex-direction: column;
+  background: url('/Images/room-bg.jpg') center / cover fixed,
+              radial-gradient(circle at 50% 0%, #3a2a10 0%, #14100a 55%, #050403 100%); }
+header { display: flex; justify-content: space-between; align-items: center; padding: 14px 36px;
+  background: rgba(10, 8, 5, .85); border-bottom: 1px solid #b8912f; color: #f1d68a; flex-wrap: wrap; gap: 10px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.logo { font-size: 28px; color: #d4a937; }
+.name { font-family: 'Playfair Display', serif; font-size: 26px; color: #e8c466; }
+small { color: #c9b27a; font-size: 11px; }
+nav { display: flex; gap: 10px; flex-wrap: wrap; }
+nav a { color: #f1d68a; text-decoration: none; padding: 8px 18px; border-radius: 22px; font-size: 14px; cursor: pointer; }
+nav a:hover { background: rgba(212, 169, 55, .15); }
+nav a.active { background: linear-gradient(135deg, #e3c25a, #a8801a); color: #20160a; font-weight: 600; }
+nav a.login { border: 1px solid #b8912f; }
+main { flex: 1; padding: 30px 16px; display: flex; justify-content: center; }
+footer { display: flex; justify-content: center; gap: 36px; padding: 16px; flex-wrap: wrap;
+  background: rgba(10, 8, 5, .85); border-top: 1px solid #b8912f; color: #e8c466; font-size: 13px; }

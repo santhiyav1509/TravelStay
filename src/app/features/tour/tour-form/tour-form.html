@@ -1,0 +1,62 @@
+<div class="card">
+  <h1>Tour Booking <span>Form</span></h1>
+  <p class="sub">— Plan Your Dream Journey —</p>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <div class="row">
+      <div>
+        <label>👤 First Name</label>
+        <input formControlName="firstName" placeholder="Enter first name" />
+        @if (bad('firstName')) { <small class="err">First name is required.</small> }
+      </div>
+      <div>
+        <label>👤 Last Name</label>
+        <input formControlName="lastName" placeholder="Enter last name" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>✉ Email Address</label>
+        <input type="email" formControlName="email" placeholder="you@example.com" />
+        @if (bad('email')) { <small class="err">Please enter a valid email address.</small> }
+      </div>
+      <div>
+        <label>📞 Phone</label>
+        <input formControlName="phone" placeholder="+91 98765 43210" />
+        @if (bad('phone')) { <small class="err">Enter a valid phone number.</small> }
+      </div>
+    </div>
+
+    <label>When are you planning to visit?</label>
+    <input type="date" formControlName="visitDate" />
+    @if (bad('visitDate')) { <small class="err">This field is required.</small> }
+
+    <label>How many people are in your group?</label>
+    <select formControlName="groupSize">
+      <option value="">Select Group Size</option>
+      @for (g of groupSizes; track g) { <option [value]="g">{{ g }}</option> }
+    </select>
+    @if (bad('groupSize')) { <small class="err">Please select group size.</small> }
+
+    <label>Which tours or events are you most interested in?</label>
+    <select formControlName="tourName">
+      <option value="">Select Tour</option>
+      @for (t of tours; track t) { <option [value]="t">{{ t }}</option> }
+    </select>
+    @if (bad('tourName')) { <small class="err">Please select a tour.</small> }
+
+    <label>What is the best way to contact you?</label>
+    <div class="contact">
+      <button type="button" [class.on]="form.value.contactMethod === 'Phone'"
+        (click)="form.patchValue({ contactMethod: 'Phone' })">📞 Phone</button>
+      <button type="button" [class.on]="form.value.contactMethod === 'Email'"
+        (click)="form.patchValue({ contactMethod: 'Email' })">✉ Email</button>
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="main">✈ {{ editId ? 'Update Booking' : 'Book Tour Now' }} →</button>
+      <button type="button" class="ghost" (click)="goDetails()">View Details</button>
+    </div>
+  </form>
+</div>

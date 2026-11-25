@@ -1,0 +1,21 @@
+<div class="bg">
+  <header>
+    <div class="brand">
+      <span class="logo">❖</span>
+      <div>
+        <div class="name">LuxuryStay</div>
+        <small>Stay in Luxury</small>
+      </div>
+    </div>
+    <nav>
+      <a routerLink="/tour">🏠 Home</a>
+      <a routerLink="/rooms" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">🛏 Rooms</a>
+      <a routerLink="/rooms/details" routerLinkActive="active">Reservations</a>
+      <a class="login">👤 Login</a>
+    </nav>
+  </header>
+  <main><router-outlet /></main>
+  <footer>
+    <span>💎 Luxury Rooms</span><span>🍽 Free Breakfast</span><span>📶 Free WiFi</span><span>🎧 24/7 Support</span>
+  </footer>
+</div>

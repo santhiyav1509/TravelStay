@@ -1,0 +1,54 @@
+<div class="card">
+  <h1>Room <span>Reservation</span></h1>
+  <p class="sub">Make Room Reservations in Minutes</p>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <label>👤 Please Enter Your Name</label>
+    <input formControlName="name" placeholder="John Doe" />
+    @if (bad('name')) { <small class="err">This field is required.</small> }
+
+    <div class="row">
+      <div>
+        <label>✉ Email Address</label>
+        <input type="email" formControlName="email" placeholder="you@example.com" />
+        @if (bad('email')) { <small class="err">Please enter a valid email address.</small> }
+      </div>
+      <div>
+        <label>📞 Telephone / Mobile</label>
+        <input formControlName="phone" placeholder="+91 98765 43210" />
+        @if (bad('phone')) { <small class="err">This field is required.</small> }
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>👥 Number of Adults</label>
+        <input type="number" formControlName="adults" min="1" />
+        @if (bad('adults')) { <small class="err">Please enter a valid number.</small> }
+      </div>
+      <div>
+        <label>👥 Number of Children</label>
+        <input type="number" formControlName="children" min="0" />
+        @if (bad('children')) { <small class="err">Please enter a valid number.</small> }
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>📅 Check-in Date</label>
+        <input type="date" formControlName="checkInDate" />
+        @if (bad('checkInDate')) { <small class="err">This field is required.</small> }
+      </div>
+      <div>
+        <label>📅 Check-out Date</label>
+        <input type="date" formControlName="checkOutDate" />
+        @if (bad('checkOutDate')) { <small class="err">This field is required.</small> }
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="main">🛏 {{ editId ? 'Update Reservation' : 'Reserve Room' }} →</button>
+      <button type="button" class="ghost" (click)="goDetails()">View Details</button>
+    </div>
+  </form>
+</div>

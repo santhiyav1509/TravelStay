@@ -1,0 +1,16 @@
+.bg { min-height: 100vh;
+  background: url('/Images/tour-bg.jpg') center / cover fixed,
+              linear-gradient(180deg, #3d8bff 0%, #9ccaff 45%, #eaf4ff 100%); }
+header { display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 36px; background: linear-gradient(90deg, #06307a, #0b4fc2); color: #fff; flex-wrap: wrap; gap: 10px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.logo { font-size: 28px; color: #ffc83d; }
+.name { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; }
+.name span { color: #7fc4ff; }
+small { opacity: .8; font-size: 11px; }
+nav { display: flex; gap: 10px; flex-wrap: wrap; }
+nav a { color: #fff; text-decoration: none; padding: 8px 18px; border-radius: 22px; font-size: 14px; cursor: pointer; }
+nav a:hover { background: rgba(255, 255, 255, .15); }
+nav a.active { background: #1f6bff; box-shadow: 0 4px 12px rgba(0, 0, 0, .3); }
+nav a.login { border: 1px solid rgba(255, 255, 255, .6); }
+main { padding: 30px 16px 50px; display: flex; justify-content: center; }
